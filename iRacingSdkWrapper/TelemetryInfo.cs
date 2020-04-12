@@ -21,6 +21,8 @@ namespace iRacingSdkWrapper
             var values = new List<TelemetryValue>();
             values.AddRange(new TelemetryValue[]
                                 {
+                                    this.LapLastLapTime,
+                                    this.LapCurrentLapTime,
                                     this.SessionTime,
                                     this.SessionNum,
                                     this.SessionState,
@@ -152,6 +154,17 @@ namespace iRacingSdkWrapper
         /// Seconds since session start. Unit: s
         /// </summary>
         public TelemetryValue<double> SessionTime { get { return new TelemetryValue<double>(sdk, "SessionTime"); } }
+
+
+        /// <summary>
+        /// Players last lap time. Unit: s
+        /// </summary>
+        public TelemetryValue<float> LapLastLapTime { get { return new TelemetryValue<float>(sdk, "LapLastLapTime"); } }
+
+        /// <summary>
+        /// Estimate of players current lap time as shown in F3 box. Unit: s
+        /// </summary>
+        public TelemetryValue<float> LapCurrentLapTime { get { return new TelemetryValue<float>(sdk, "LapCurrentLapTime"); } }
 
 
         /// <summary>
